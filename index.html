@@ -1,0 +1,548 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Chalé dos Encantos — Alfredo Wagner, SC</title>
+<meta name="description" content="Chalé com hidromassagem e cromoterapia, lareira, balanço do infinito e café da manhã incluso em Alfredo Wagner, SC. Nota 5,0★ com 124 avaliações — Preferido dos Hóspedes. Reserve pelo WhatsApp.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,500&family=Work+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --terra:#7A3B24;
+    --terra-2:#9C4E30;
+    --blush:#F4E9E0;
+    --paper:#FDF9F4;
+    --ink:#2B2019;
+    --stone:#6E5F53;
+    --gold:#C98A3C;
+    --gold-light:#E4B876;
+    --line: rgba(43,32,25,0.13);
+    --shadow: 0 22px 50px -22px rgba(43,32,25,0.4);
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{margin:0; font-family:'Work Sans',sans-serif; background:var(--paper); color:var(--ink); line-height:1.65; -webkit-font-smoothing:antialiased;}
+  h1,h2,h3,.display{font-family:'Playfair Display',serif; font-weight:500; letter-spacing:-0.01em; margin:0; color:var(--terra);}
+  img{max-width:100%; display:block;}
+  a{color:inherit; text-decoration:none;}
+  .wrap{max-width:1180px; margin:0 auto; padding:0 24px;}
+  section{position:relative;}
+  .eyebrow{font-size:12.5px; letter-spacing:0.16em; text-transform:uppercase; font-weight:700; color:var(--gold); display:inline-flex; align-items:center; gap:8px; margin-bottom:14px;}
+  .eyebrow::before{content:""; width:20px; height:1px; background:var(--gold); display:inline-block;}
+  a:focus-visible, button:focus-visible{outline:2px solid var(--gold); outline-offset:3px;}
+  @media (prefers-reduced-motion: reduce){*{animation-duration:.001ms !important; animation-iteration-count:1 !important; transition-duration:.001ms !important; scroll-behavior:auto !important;}}
+  .reveal{opacity:0; transform:translateY(22px); transition:opacity .8s ease, transform .8s ease;}
+  .reveal.is-visible{opacity:1; transform:translateY(0);}
+
+  /* ---------- topbar ---------- */
+  .topbar{position:fixed; top:0; left:0; right:0; z-index:60; display:flex; align-items:center; justify-content:space-between; padding:18px 28px; background:linear-gradient(to bottom, rgba(43,32,25,0.5), rgba(43,32,25,0)); transition:background .3s ease, padding .3s ease;}
+  .topbar.scrolled{background:rgba(253,249,244,0.94); backdrop-filter:blur(8px); box-shadow:0 1px 0 var(--line); padding:12px 28px;}
+  .topbar .brand{font-family:'Playfair Display',serif; font-size:19px; font-weight:600; color:#fff; transition:color .3s ease;}
+  .topbar.scrolled .brand{color:var(--terra);}
+  .topbar-right{display:flex; align-items:center; gap:16px;}
+  .ig-link{width:36px; height:36px; border-radius:50%; display:flex; align-items:center; justify-content:center; border:1px solid rgba(255,255,255,0.4); color:#fff; transition:border-color .3s ease, color .3s ease, background .2s ease;}
+  .topbar.scrolled .ig-link{border-color:var(--line); color:var(--terra);}
+  .ig-link:hover{background:var(--gold); border-color:var(--gold); color:#fff;}
+  .ig-link svg{width:17px; height:17px;}
+  .cta-mini{background:var(--gold); color:#fff; font-weight:700; font-size:13.5px; padding:10px 18px; border-radius:100px;}
+
+  /* ---------- hero ---------- */
+  .hero{
+    min-height:100svh; display:flex; align-items:flex-end; position:relative;
+    background:
+      linear-gradient(to bottom, rgba(43,26,17,0.32) 0%, rgba(43,26,17,0.4) 50%, rgba(30,18,12,0.94) 100%),
+      url('images/drone.avif')
+      center/cover no-repeat;
+    color:#fff; padding-top:140px;
+  }
+  .hero-inner{width:100%; padding-bottom:64px;}
+  .hero-badge{display:inline-flex; align-items:center; gap:10px; background:rgba(253,249,244,0.14); border:1px solid rgba(255,255,255,0.32); backdrop-filter:blur(6px); padding:8px 16px 8px 10px; border-radius:100px; font-size:13px; font-weight:600; margin-bottom:26px;}
+  .hero-badge .stars{color:var(--gold-light); letter-spacing:1px;}
+  .hero h1{font-size:clamp(34px,5.6vw,66px); line-height:1.08; max-width:17ch; color:#fff; font-weight:500;}
+  .hero h1 em{font-style:italic; color:var(--gold-light); font-weight:500;}
+  .hero p.sub{max-width:48ch; font-size:clamp(16px,2vw,18.5px); color:rgba(255,255,255,0.85); margin-top:22px;}
+  .hero-ctas{display:flex; flex-wrap:wrap; gap:14px; margin-top:32px; align-items:center;}
+  .btn{display:inline-flex; align-items:center; gap:10px; padding:16px 28px; font-weight:700; font-size:15px; border-radius:100px; transition:transform .2s ease, box-shadow .2s ease, background .2s ease; white-space:nowrap;}
+  .btn-primary{background:#25D366; color:#0b2a1c; box-shadow:0 10px 30px -8px rgba(37,211,102,0.55);}
+  .btn-primary:hover{transform:translateY(-2px); box-shadow:0 14px 34px -8px rgba(37,211,102,0.7);}
+  .btn-ghost{border:1px solid rgba(255,255,255,0.5); color:#fff;}
+  .btn-ghost:hover{background:rgba(255,255,255,0.12);}
+  .btn svg{width:18px; height:18px; flex-shrink:0;}
+  .hero-stats{display:flex; flex-wrap:wrap; gap:34px; margin-top:50px; padding-top:24px; border-top:1px solid rgba(255,255,255,0.2);}
+  .hero-stat b{font-family:'Playfair Display',serif; font-size:25px; display:block; color:#fff; font-weight:600;}
+  .hero-stat span{font-size:12px; color:rgba(255,255,255,0.7); text-transform:uppercase; letter-spacing:0.05em;}
+
+  /* ---------- destaques ---------- */
+  .destaques{background:var(--blush); padding:96px 0 88px;}
+  .section-head{max-width:640px; margin-bottom:52px;}
+  .section-head h2{font-size:clamp(28px,3.6vw,40px);}
+  .section-head p{color:var(--stone); font-size:16.5px; margin-top:14px;}
+  .cards{display:grid; grid-template-columns:repeat(3,1fr); gap:24px;}
+  .card{background:var(--paper); border:1px solid var(--line); border-radius:6px; padding:34px 28px; transition:transform .3s ease, box-shadow .3s ease;}
+  .card:hover{transform:translateY(-4px); box-shadow:var(--shadow);}
+  .card .icon{width:44px; height:44px; border-radius:50%; background:var(--terra); color:var(--gold-light); display:flex; align-items:center; justify-content:center; margin-bottom:18px;}
+  .card .icon svg{width:22px; height:22px;}
+  .card h3{font-size:20px;}
+  .card p{color:var(--stone); font-size:14.5px; margin-top:10px;}
+
+  /* ---------- sobre ---------- */
+  .sobre{padding:100px 0; background:var(--paper);}
+  .sobre-grid{display:grid; grid-template-columns:1fr 1fr; gap:64px; align-items:center;}
+  .sobre-text h2{font-size:clamp(28px,3.4vw,38px);}
+  .sobre-text p{color:var(--stone); font-size:16px; margin-top:18px;}
+  .amenity-list{list-style:none; padding:0; margin:28px 0 0; display:grid; grid-template-columns:1fr 1fr; gap:13px 20px;}
+  .amenity-list li{display:flex; align-items:center; gap:10px; font-size:14px; font-weight:600; color:var(--terra-2);}
+  .amenity-list svg{width:16px; height:16px; color:var(--gold); flex-shrink:0;}
+  .gallery-stack{position:relative;}
+  .gallery-stack img{border-radius:6px; box-shadow:var(--shadow);}
+  .g-main{width:100%; aspect-ratio:4/5; object-fit:cover;}
+  .g-float{position:absolute; width:55%; aspect-ratio:4/3; object-fit:cover; bottom:-38px; left:-46px; border:6px solid var(--paper);}
+
+  /* ---------- galeria ---------- */
+  .galeria{padding:100px 0; background:var(--terra); color:#fff;}
+  .galeria .section-head h2{color:#fff;}
+  .galeria .section-head p{color:rgba(255,255,255,0.68);}
+  .grid-photos{display:grid; grid-template-columns:repeat(4,1fr); grid-auto-rows:150px; gap:12px;}
+  .grid-photos button{padding:0; border:0; background:none; cursor:zoom-in; border-radius:4px; overflow:hidden; position:relative; display:block;}
+  .grid-photos img{width:100%; height:100%; object-fit:cover; transition:transform .5s ease, filter .4s ease; filter:saturate(0.96);}
+  .grid-photos button:hover img{transform:scale(1.06); filter:saturate(1.1);}
+  .grid-photos .p1{grid-column:span 2; grid-row:span 2;}
+  .grid-photos .p5{grid-column:span 2;}
+
+  /* ---------- avaliações ---------- */
+  .avaliacoes{background:var(--paper); padding:100px 0;}
+  .rating-hero{display:grid; grid-template-columns:280px 1fr; gap:70px; align-items:center; margin-bottom:60px;}
+  .rating-big{text-align:center; background:var(--blush); border:1px solid var(--line); border-radius:6px; padding:40px 20px;}
+  .rating-big .score{font-family:'Playfair Display',serif; font-size:60px; font-weight:600; color:var(--terra); line-height:1;}
+  .rating-big .stars{color:var(--gold); letter-spacing:3px; margin:12px 0 6px; font-size:17px;}
+  .rating-big .count{color:var(--stone); font-size:13.5px;}
+  .rating-big .badge-top{margin-top:18px; display:inline-block; background:var(--terra); color:var(--gold-light); font-size:11.5px; font-weight:700; letter-spacing:0.05em; padding:7px 14px; border-radius:100px; text-transform:uppercase;}
+  .rating-bars{display:flex; flex-direction:column; gap:16px;}
+  .rbar-row{display:grid; grid-template-columns:150px 1fr 44px; align-items:center; gap:16px;}
+  .rbar-row span:first-child{font-size:14px; font-weight:600; color:var(--terra-2);}
+  .rbar-track{height:7px; background:var(--line); border-radius:10px; overflow:hidden;}
+  .rbar-fill{height:100%; background:linear-gradient(90deg, var(--gold), var(--gold-light)); border-radius:10px; width:0%; transition:width 1.1s cubic-bezier(.2,.8,.2,1);}
+  .rbar-row .val{font-size:13.5px; font-weight:700; color:var(--terra); text-align:right;}
+  .tag-cloud{display:flex; flex-wrap:wrap; gap:12px;}
+  .tag{background:var(--blush); border:1px solid var(--line); border-radius:100px; padding:10px 18px; font-size:14px; font-weight:600; color:var(--terra-2); display:inline-flex; align-items:center; gap:8px;}
+  .tag .n{background:var(--terra); color:var(--gold-light); font-size:11.5px; font-weight:700; border-radius:100px; padding:2px 8px;}
+
+  /* ---------- anfitriã ---------- */
+  .anfitria{padding:96px 0; background:var(--blush);}
+  .anfitria-card{display:grid; grid-template-columns:auto 1fr auto; gap:36px; align-items:center; background:var(--paper); border:1px solid var(--line); border-radius:8px; padding:40px 44px;}
+  .anfitria-card img{width:88px; height:88px; border-radius:50%; object-fit:cover; border:3px solid var(--blush); box-shadow:var(--shadow);}
+  .anfitria-card h3{font-size:22px;}
+  .anfitria-card p{color:var(--stone); margin-top:6px; font-size:14.5px;}
+  .anfitria-stats{display:flex; gap:26px;}
+  .anfitria-stats div{text-align:center;}
+  .anfitria-stats b{display:block; font-family:'Playfair Display',serif; font-size:22px; color:var(--terra);}
+  .anfitria-stats span{font-size:11px; color:var(--stone); text-transform:uppercase; letter-spacing:0.05em;}
+
+  /* ---------- localização ---------- */
+  .local{padding:96px 0; background:var(--paper);}
+  .local-grid{display:grid; grid-template-columns:1fr 1fr; gap:60px; align-items:center;}
+  .local-text p{color:var(--stone); font-size:16px; margin-top:16px;}
+  .local-facts{list-style:none; padding:0; margin:26px 0 0; display:grid; gap:14px;}
+  .local-facts li{display:flex; gap:12px; align-items:flex-start; font-size:14.5px; color:var(--ink);}
+  .local-facts svg{width:18px; height:18px; color:var(--gold); flex-shrink:0; margin-top:2px;}
+  .local-img{border-radius:8px; overflow:hidden; box-shadow:var(--shadow); aspect-ratio:4/5;}
+  .local-img img{width:100%; height:100%; object-fit:cover;}
+
+  /* ---------- reservar ---------- */
+  .reservar{background:var(--terra); color:#fff; padding:96px 0;}
+  .reservar .section-head h2{color:#fff;}
+  .reservar .section-head p{color:rgba(255,255,255,0.68);}
+  .steps{display:grid; grid-template-columns:repeat(3,1fr); gap:28px;}
+  .step{border:1px solid rgba(255,255,255,0.16); border-radius:6px; padding:30px 24px;}
+  .step .step-num{font-family:'Playfair Display',serif; font-size:15px; color:var(--gold-light); font-weight:700;}
+  .step h3{color:#fff; font-size:18px; margin-top:12px;}
+  .step p{color:rgba(255,255,255,0.65); font-size:14px; margin-top:8px;}
+
+  /* ---------- cta final ---------- */
+  .cta-final{
+    padding:110px 0; text-align:center; color:#fff;
+    background:
+      linear-gradient(to bottom, rgba(43,26,17,0.6), rgba(30,18,12,0.94)),
+      url('images/por-do-sol.avif')
+      center/cover no-repeat;
+  }
+  .cta-final h2{color:#fff; font-size:clamp(30px,4.4vw,48px); max-width:17ch; margin:0 auto;}
+  .cta-final p{color:rgba(255,255,255,0.8); max-width:48ch; margin:20px auto 34px; font-size:16.5px;}
+
+  footer{background:var(--ink); color:rgba(255,255,255,0.55); padding:44px 0; font-size:13.5px;}
+  footer .wrap{display:flex; justify-content:space-between; flex-wrap:wrap; gap:16px; align-items:center;}
+  footer strong{color:#fff;}
+  footer .foot-ig{display:inline-flex; align-items:center; gap:8px; color:rgba(255,255,255,0.75);}
+  footer .foot-ig:hover{color:var(--gold-light);}
+  footer .foot-ig svg{width:16px; height:16px;}
+
+  .float-wa{position:fixed; bottom:24px; right:24px; z-index:70; width:60px; height:60px; border-radius:50%; background:#25D366; display:flex; align-items:center; justify-content:center; box-shadow:0 10px 26px -6px rgba(0,0,0,0.5); animation:pulseWa 2.6s ease-in-out infinite;}
+  .float-wa svg{width:29px; height:29px; color:#fff;}
+  @keyframes pulseWa{0%,100%{transform:scale(1);} 50%{transform:scale(1.07);}}
+
+  /* ---------- lightbox ---------- */
+  .lightbox{position:fixed; inset:0; background:rgba(30,18,12,0.96); z-index:100; display:none; align-items:center; justify-content:center; padding:24px;}
+  .lightbox.open{display:flex;}
+  .lightbox-inner{position:relative; max-width:1100px; width:100%; display:flex; flex-direction:column; align-items:center; gap:14px;}
+  .lightbox img{max-width:100%; max-height:78vh; border-radius:6px; box-shadow:0 30px 60px -20px rgba(0,0,0,0.6);}
+  .lightbox-caption{color:rgba(255,255,255,0.75); font-size:13.5px; font-weight:600;}
+  .lb-close{position:absolute; top:-46px; right:0; width:40px; height:40px; border-radius:50%; background:rgba(255,255,255,0.1); border:1px solid rgba(255,255,255,0.25); color:#fff; display:flex; align-items:center; justify-content:center; cursor:pointer;}
+  .lb-close:hover{background:rgba(255,255,255,0.2);}
+  .lb-nav{position:absolute; top:50%; transform:translateY(-50%); width:46px; height:46px; border-radius:50%; background:rgba(255,255,255,0.1); border:1px solid rgba(255,255,255,0.25); color:#fff; display:flex; align-items:center; justify-content:center; cursor:pointer;}
+  .lb-nav:hover{background:rgba(255,255,255,0.2);}
+  .lb-prev{left:-58px;} .lb-next{right:-58px;}
+  .lb-nav svg, .lb-close svg{width:20px; height:20px;}
+  @media (max-width: 760px){ .lb-prev{left:6px;} .lb-next{right:6px;} .lb-close{top:6px; right:6px;} }
+
+  @media (max-width: 900px){
+    .cards{grid-template-columns:1fr;}
+    .sobre-grid{grid-template-columns:1fr; gap:80px;}
+    .g-float{left:0; bottom:-28px; width:60%;}
+    .rating-hero{grid-template-columns:1fr; gap:36px;}
+    .grid-photos{grid-template-columns:repeat(2,1fr); grid-auto-rows:130px;}
+    .grid-photos .p1{grid-column:span 2; grid-row:span 1;}
+    .anfitria-card{grid-template-columns:1fr; text-align:center; padding:32px 24px;}
+    .anfitria-stats{justify-content:center;}
+    .local-grid{grid-template-columns:1fr;}
+    .steps{grid-template-columns:1fr;}
+    .amenity-list{grid-template-columns:1fr;}
+  }
+</style>
+</head>
+<body>
+
+<!-- ============ TOPBAR ============ -->
+<div class="topbar" id="topbar">
+  <div class="brand">Chalé dos Encantos</div>
+  <div class="topbar-right">
+    <a class="ig-link" href="https://www.instagram.com/chale_dos_encantos/" target="_blank" rel="noopener" aria-label="Instagram">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1"/></svg>
+    </a>
+    <a class="cta-mini wa-link" href="#" target="_blank" rel="noopener">Reservar</a>
+  </div>
+</div>
+
+<!-- ============ HERO ============ -->
+<header class="hero">
+  <div class="wrap hero-inner">
+    <div class="hero-badge"><span class="stars">★★★★★</span> 5,0 · Preferido dos Hóspedes · Top 1%</div>
+    <h1>Onde a paz encontra<br><em>vista de tirar o fôlego.</em></h1>
+    <p class="sub">Chalé com hidromassagem e cromoterapia, lareira, balanço do infinito e café da manhã incluso, a 20 minutos do centro de Alfredo Wagner.</p>
+    <div class="hero-ctas">
+      <a class="btn btn-primary wa-link" href="#" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.5 14.4c-.3-.1-1.7-.8-1.9-.9-.3-.1-.4-.1-.6.1-.2.3-.7.9-.8 1-.1.2-.3.2-.5.1-1.5-.7-2.5-1.3-3.5-3-.3-.5.3-.4.8-1.4.1-.2 0-.4 0-.5C11 9.5 10.5 8.2 10.2 7.6c-.2-.5-.5-.4-.6-.4h-.5c-.2 0-.5.1-.7.3-.2.3-1 1-1 2.4s1 2.8 1.1 3c.1.2 2 3.1 4.9 4.3.7.3 1.2.5 1.6.6.7.2 1.3.2 1.8.1.5-.1 1.7-.7 1.9-1.3.2-.7.2-1.2.2-1.3-.1-.1-.3-.2-.5-.3z"/><path d="M12 2C6.5 2 2 6.5 2 12c0 1.9.5 3.7 1.5 5.3L2 22l4.8-1.5c1.5.8 3.3 1.3 5.2 1.3 5.5 0 10-4.5 10-10S17.5 2 12 2zm0 18.2c-1.7 0-3.4-.5-4.8-1.3l-.3-.2-3.1 1 1-3-.2-.3C3.5 15 3 13.5 3 12c0-4.9 4.1-9 9-9s9 4.1 9 9-4.1 9-9 9z"/></svg>
+        Falar no WhatsApp
+      </a>
+      <a class="btn btn-ghost" href="#galeria">Ver fotos</a>
+    </div>
+    <div class="hero-stats">
+      <div class="hero-stat"><b>5,0★</b><span>124 avaliações</span></div>
+      <div class="hero-stat"><b>Top 1%</b><span>dos anúncios no Airbnb</span></div>
+      <div class="hero-stat"><b>100%</b><span>taxa de resposta</span></div>
+      <div class="hero-stat"><b>&lt; 1h</b><span>tempo de resposta</span></div>
+    </div>
+  </div>
+</header>
+
+<!-- ============ DESTAQUES ============ -->
+<section class="destaques">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <div class="eyebrow">Por que este chalé</div>
+      <h2>Nota máxima em todas as categorias</h2>
+      <p>124 avaliações, 100% delas 5 estrelas — e nota 5,0 cravado em limpeza, comunicação, localização e custo-benefício.</p>
+    </div>
+    <div class="cards">
+      <div class="card reveal">
+        <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="8" r="4"/><path d="M4 18c1.5-2 3-3 5-3 1.5 0 2 1 3.5 1s2.5-1 4-1c1.5 0 2.5.7 3.5 1.5"/><path d="M12 2v1M12 13v1"/></svg></div>
+        <h3>Hidromassagem com cromoterapia</h3>
+        <p>Relaxe com o jogo de luzes e cores da cromoterapia, além de lareira e fogo de chão para os dias mais frios.</p>
+      </div>
+      <div class="card reveal">
+        <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 2l2.6 6.1 6.4.6-4.9 4.2 1.5 6.3L12 15.9l-5.6 3.3 1.5-6.3-4.9-4.2 6.4-.6z"/></svg></div>
+        <h3>Top 1% dos anúncios do Airbnb</h3>
+        <p>Selo "Preferido dos Hóspedes" e self check-in com cofre de chaves — chegue no seu horário, sem burocracia.</p>
+      </div>
+      <div class="card reveal">
+        <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 8h13a3 3 0 010 6h-1"/><path d="M4 8v7a2 2 0 002 2h7a2 2 0 002-2V8"/></svg></div>
+        <h3>Balanço do infinito + café incluso</h3>
+        <p>O cenário mais fotografado da hospedagem, com café da manhã delicioso já incluso na diária.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SOBRE ============ -->
+<section class="sobre">
+  <div class="wrap sobre-grid">
+    <div class="sobre-text reveal">
+      <div class="eyebrow">O espaço</div>
+      <h2>Aconchego, vista de tirar o fôlego e muita paz</h2>
+      <p>Local perfeito para quem procura um ambiente aconchegante, uma vista de tirar o fôlego e curtir um lugar com muita paz e ar puro. Acesso fácil — apenas 350 metros de estrada de chão, a 20 minutos do centro de Alfredo Wagner.</p>
+      <ul class="amenity-list">
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>Hidromassagem com cromoterapia</li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>Lareira e fogo de chão</li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>Café da manhã incluso na diária</li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>Cozinha completa + churrasqueira</li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>Smart TVs com Netflix e Prime Video</li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>Vista para o vale e para o rio</li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>Roupões e kit banheira (sais e espumas)</li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>1 caixa de lenha por diária</li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>Estacionamento gratuito no local</li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>Self check-in com cofre de chaves</li>
+      </ul>
+      <a class="btn btn-primary wa-link" style="margin-top:32px;" href="#" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.5 14.4c-.3-.1-1.7-.8-1.9-.9-.3-.1-.4-.1-.6.1-.2.3-.7.9-.8 1-.1.2-.3.2-.5.1-1.5-.7-2.5-1.3-3.5-3-.3-.5.3-.4.8-1.4.1-.2 0-.4 0-.5C11 9.5 10.5 8.2 10.2 7.6c-.2-.5-.5-.4-.6-.4h-.5c-.2 0-.5.1-.7.3-.2.3-1 1-1 2.4s1 2.8 1.1 3c.1.2 2 3.1 4.9 4.3.7.3 1.2.5 1.6.6.7.2 1.3.2 1.8.1.5-.1 1.7-.7 1.9-1.3.2-.7.2-1.2.2-1.3-.1-.1-.3-.2-.5-.3z"/><path d="M12 2C6.5 2 2 6.5 2 12c0 1.9.5 3.7 1.5 5.3L2 22l4.8-1.5c1.5.8 3.3 1.3 5.2 1.3 5.5 0 10-4.5 10-10S17.5 2 12 2zm0 18.2c-1.7 0-3.4-.5-4.8-1.3l-.3-.2-3.1 1 1-3-.2-.3C3.5 15 3 13.5 3 12c0-4.9 4.1-9 9-9s9 4.1 9 9-4.1 9-9 9z"/></svg>
+        Consultar datas disponíveis
+      </a>
+    </div>
+    <div class="gallery-stack reveal">
+      <img class="g-main" src="images/exterior-noite.avif" alt="Chalé dos Encantos">
+      <img class="g-float" src="images/lareira-ext.avif" alt="Balanço do infinito no Chalé dos Encantos">
+    </div>
+  </div>
+</section>
+
+<!-- ============ GALERIA ============ -->
+<section class="galeria" id="galeria">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <div class="eyebrow">Galeria</div>
+      <h2>Um pouco do que espera por você</h2>
+      <p>Clique em qualquer foto para ver em tela cheia.</p>
+    </div>
+    <div class="grid-photos reveal" data-group="galeria">
+      <button class="p1" data-full="images/frente-ext.avif" data-caption="Chalé dos Encantos — foto 1 de 5">
+        <img src="images/frente-ext.avif" alt="Chalé dos Encantos"></button>
+      <button data-full="images/cafe.avif" data-caption="Chalé dos Encantos — foto 2 de 5">
+        <img src="images/cafe.avif" alt="Chalé dos Encantos"></button>
+      <button data-full="images/cozinha.avif" data-caption="Chalé dos Encantos — foto 3 de 5">
+        <img src="images/cozinha.avif" alt="Chalé dos Encantos"></button>
+      <button class="p5" data-full="images/lareira.avif" data-caption="Chalé dos Encantos — foto 4 de 5">
+        <img src="images/lareira.avif" alt="Chalé dos Encantos"></button>
+      <button data-full="images/hidro.avif" data-caption="Chalé dos Encantos — foto 5 de 5">
+        <img src="images/hidro.avif" alt="Chalé dos Encantos"></button>
+    </div>
+  </div>
+</section>
+
+<!-- ============ AVALIAÇÕES ============ -->
+<section class="avaliacoes">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <div class="eyebrow">Avaliações reais no Airbnb</div>
+      <h2>124 hóspedes, nota 5,0 cravado</h2>
+      <p>100% das avaliações são 5 estrelas — nota máxima em limpeza, exatidão, check-in, comunicação, localização e custo-benefício.</p>
+    </div>
+    <div class="rating-hero">
+      <div class="rating-big reveal">
+        <div class="score">5,0</div>
+        <div class="stars">★★★★★</div>
+        <div class="count">baseado em 124 avaliações</div>
+        <div class="badge-top">Preferido dos Hóspedes</div>
+      </div>
+      <div class="rating-bars reveal">
+        <div class="rbar-row"><span>Limpeza</span><div class="rbar-track"><div class="rbar-fill" data-w="100"></div></div><span class="val">5,0</span></div>
+        <div class="rbar-row"><span>Exatidão do anúncio</span><div class="rbar-track"><div class="rbar-fill" data-w="100"></div></div><span class="val">5,0</span></div>
+        <div class="rbar-row"><span>Check-in</span><div class="rbar-track"><div class="rbar-fill" data-w="100"></div></div><span class="val">5,0</span></div>
+        <div class="rbar-row"><span>Comunicação</span><div class="rbar-track"><div class="rbar-fill" data-w="100"></div></div><span class="val">5,0</span></div>
+        <div class="rbar-row"><span>Localização</span><div class="rbar-track"><div class="rbar-fill" data-w="100"></div></div><span class="val">5,0</span></div>
+        <div class="rbar-row"><span>Custo-benefício</span><div class="rbar-track"><div class="rbar-fill" data-w="100"></div></div><span class="val">5,0</span></div>
+      </div>
+    </div>
+    <div class="reveal">
+      <p style="font-weight:700; color:var(--terra-2); margin-bottom:18px; font-size:14px; text-transform:uppercase; letter-spacing:0.05em;">O que os hóspedes mais mencionam</p>
+      <div class="tag-cloud">
+        <span class="tag">Hospitalidade <span class="n">71</span></span>
+        <span class="tag">Vista <span class="n">58</span></span>
+        <span class="tag">Limpeza <span class="n">43</span></span>
+        <span class="tag">Café da manhã <span class="n">34</span></span>
+        <span class="tag">Conforto <span class="n">33</span></span>
+        <span class="tag">Espaço interno <span class="n">22</span></span>
+        <span class="tag">Localização <span class="n">21</span></span>
+        <span class="tag">Acesso <span class="n">12</span></span>
+        <span class="tag">Comodidades <span class="n">12</span></span>
+        <span class="tag">Exatidão <span class="n">11</span></span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ ANFITRIÃ ============ -->
+<section class="anfitria">
+  <div class="wrap">
+    <div class="anfitria-card reveal">
+      <img src="https://a0.muscache.com/im/pictures/user/User/original/1c4813cc-7bf2-4a0b-941d-6b2fb276cc13.jpeg?im_w=240" alt="Núbia Hintemann, anfitriã">
+      <div>
+        <div class="eyebrow" style="margin-bottom:6px;">Sua anfitriã</div>
+        <h3>Núbia Hintemann · Superhost</h3>
+        <p>Mora em Alfredo Wagner e recebe hóspedes há 3 anos. Taxa de resposta de 100% — geralmente em até 1 hora.</p>
+      </div>
+      <div class="anfitria-stats">
+        <div><b>124</b><span>Avaliações</span></div>
+        <div><b>5,0</b><span>Nota média</span></div>
+        <div><b>3 anos</b><span>Hospedando</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ LOCALIZAÇÃO ============ -->
+<section class="local">
+  <div class="wrap local-grid">
+    <div class="local-text reveal">
+      <div class="eyebrow">Onde você estará</div>
+      <h2>Alfredo Wagner, Santa Catarina</h2>
+      <p>O chalé fica em local privativo, com fácil acesso — apenas 350 metros de estrada de chão — a 20 minutos do centro de Alfredo Wagner. A localização exata é enviada após a confirmação da reserva.</p>
+      <ul class="local-facts">
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="4" y="10" width="16" height="10" rx="2"/><path d="M8 10V7a4 4 0 018 0v3"/></svg>Self check-in com cofre de chaves — chegue no seu horário</li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 18c1.5-2 3-3 5-3 1.5 0 2 1 3.5 1s2.5-1 4-1c1.5 0 2.5.7 3.5 1.5"/><circle cx="12" cy="8" r="4"/></svg>Check-in após 15h · checkout até 12h · máximo 2 hóspedes</li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 8h13a3 3 0 010 6h-1"/><path d="M4 8v7a2 2 0 002 2h7a2 2 0 002-2V8"/></svg>Café da manhã já incluso na diária — outras refeições por conta do hóspede, com cardápios de delivery disponíveis no local</li>
+      </ul>
+    </div>
+    <div class="local-img reveal">
+      <img src="images/vista.avif" alt="Vista do vale em Alfredo Wagner">
+    </div>
+  </div>
+</section>
+
+<!-- ============ COMO RESERVAR ============ -->
+<section class="reservar">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <div class="eyebrow">Como reservar</div>
+      <h2>Sua estadia em 3 passos</h2>
+      <p>Sem burocracia — confirmamos tudo diretamente pelo WhatsApp.</p>
+    </div>
+    <div class="steps">
+      <div class="step reveal">
+        <div class="step-num">01</div>
+        <h3>Chame no WhatsApp</h3>
+        <p>Conte as datas desejadas e o número de hóspedes (máximo 2).</p>
+      </div>
+      <div class="step reveal">
+        <div class="step-num">02</div>
+        <h3>Confirme a disponibilidade</h3>
+        <p>Núbia responde em até 1 hora com valores e condições de pagamento.</p>
+      </div>
+      <div class="step reveal">
+        <div class="step-num">03</div>
+        <h3>Garanta sua estadia</h3>
+        <p>Check-in a partir das 15h com cofre de chaves. É só chegar e relaxar na hidromassagem.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CTA FINAL ============ -->
+<section class="cta-final">
+  <div class="wrap">
+    <h2 class="reveal">Seus dias de encanto começam aqui</h2>
+    <p class="reveal">Chame agora no WhatsApp e confira as datas disponíveis no Chalé dos Encantos.</p>
+    <a class="btn btn-primary wa-link reveal" style="justify-content:center; display:inline-flex;" href="#" target="_blank" rel="noopener">
+      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.5 14.4c-.3-.1-1.7-.8-1.9-.9-.3-.1-.4-.1-.6.1-.2.3-.7.9-.8 1-.1.2-.3.2-.5.1-1.5-.7-2.5-1.3-3.5-3-.3-.5.3-.4.8-1.4.1-.2 0-.4 0-.5C11 9.5 10.5 8.2 10.2 7.6c-.2-.5-.5-.4-.6-.4h-.5c-.2 0-.5.1-.7.3-.2.3-1 1-1 2.4s1 2.8 1.1 3c.1.2 2 3.1 4.9 4.3.7.3 1.2.5 1.6.6.7.2 1.3.2 1.8.1.5-.1 1.7-.7 1.9-1.3.2-.7.2-1.2.2-1.3-.1-.1-.3-.2-.5-.3z"/><path d="M12 2C6.5 2 2 6.5 2 12c0 1.9.5 3.7 1.5 5.3L2 22l4.8-1.5c1.5.8 3.3 1.3 5.2 1.3 5.5 0 10-4.5 10-10S17.5 2 12 2zm0 18.2c-1.7 0-3.4-.5-4.8-1.3l-.3-.2-3.1 1 1-3-.2-.3C3.5 15 3 13.5 3 12c0-4.9 4.1-9 9-9s9 4.1 9 9-4.1 9-9 9z"/></svg>
+      Reservar pelo WhatsApp
+    </a>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div><strong>Chalé dos Encantos</strong> · Alfredo Wagner, Santa Catarina</div>
+    <a class="foot-ig" href="https://www.instagram.com/chale_dos_encantos/" target="_blank" rel="noopener">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1"/></svg>
+      @chale_dos_encantos
+    </a>
+    <div>Anúncio original no Airbnb · Site não afiliado ao Airbnb, Inc.</div>
+  </div>
+</footer>
+
+<a class="float-wa wa-link" href="#" target="_blank" rel="noopener" aria-label="Falar no WhatsApp">
+  <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.5 14.4c-.3-.1-1.7-.8-1.9-.9-.3-.1-.4-.1-.6.1-.2.3-.7.9-.8 1-.1.2-.3.2-.5.1-1.5-.7-2.5-1.3-3.5-3-.3-.5.3-.4.8-1.4.1-.2 0-.4 0-.5C11 9.5 10.5 8.2 10.2 7.6c-.2-.5-.5-.4-.6-.4h-.5c-.2 0-.5.1-.7.3-.2.3-1 1-1 2.4s1 2.8 1.1 3c.1.2 2 3.1 4.9 4.3.7.3 1.2.5 1.6.6.7.2 1.3.2 1.8.1.5-.1 1.7-.7 1.9-1.3.2-.7.2-1.2.2-1.3-.1-.1-.3-.2-.5-.3z"/><path d="M12 2C6.5 2 2 6.5 2 12c0 1.9.5 3.7 1.5 5.3L2 22l4.8-1.5c1.5.8 3.3 1.3 5.2 1.3 5.5 0 10-4.5 10-10S17.5 2 12 2zm0 18.2c-1.7 0-3.4-.5-4.8-1.3l-.3-.2-3.1 1 1-3-.2-.3C3.5 15 3 13.5 3 12c0-4.9 4.1-9 9-9s9 4.1 9 9-4.1 9-9 9z"/></svg>
+</a>
+
+<!-- ============ LIGHTBOX ============ -->
+<div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Visualização de foto">
+  <div class="lightbox-inner">
+    <button class="lb-close" id="lbClose" aria-label="Fechar"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 6l12 12M18 6L6 18"/></svg></button>
+    <button class="lb-nav lb-prev" id="lbPrev" aria-label="Foto anterior"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 18l-6-6 6-6"/></svg></button>
+    <img id="lbImg" src="" alt="">
+    <button class="lb-nav lb-next" id="lbNext" aria-label="Próxima foto"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg></button>
+    <div class="lightbox-caption" id="lbCaption"></div>
+  </div>
+</div>
+
+<script>
+  // ======= CONFIGURAÇÃO: TROQUE PELO NÚMERO REAL DO WHATSAPP =======
+  const WHATSAPP_NUMBER = "5548991579810"; // <-- SUBSTITUA AQUI
+  const WHATSAPP_MESSAGE = "Olá! Vi o site do Chalé dos Encantos e gostaria de saber mais sobre disponibilidade e valores.";
+
+  const waUrl = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(WHATSAPP_MESSAGE)}`;
+  document.querySelectorAll(".wa-link").forEach(el => el.setAttribute("href", waUrl));
+
+  const topbar = document.getElementById("topbar");
+  window.addEventListener("scroll", () => { topbar.classList.toggle("scrolled", window.scrollY > 60); }, { passive:true });
+
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting){ e.target.classList.add("is-visible"); io.unobserve(e.target); } });
+  }, { threshold: 0.12 });
+  document.querySelectorAll(".reveal").forEach(el => io.observe(el));
+
+  const bars = document.querySelectorAll(".rbar-fill");
+  const ioBars = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting){ e.target.style.width = e.target.dataset.w + "%"; ioBars.unobserve(e.target); } });
+  }, { threshold: 0.4 });
+  bars.forEach(b => ioBars.observe(b));
+
+  // ======= LIGHTBOX / GALERIA =======
+  const lightbox = document.getElementById("lightbox");
+  const lbImg = document.getElementById("lbImg");
+  const lbCaption = document.getElementById("lbCaption");
+  let currentGroup = [];
+  let currentIndex = 0;
+
+  function openLightbox(groupEl, index){
+    const buttons = Array.from(groupEl.querySelectorAll("button"));
+    currentGroup = buttons.map(b => ({ full: b.dataset.full, caption: b.dataset.caption }));
+    currentIndex = index;
+    renderLightbox();
+    lightbox.classList.add("open");
+    document.body.style.overflow = "hidden";
+  }
+  function renderLightbox(){
+    const item = currentGroup[currentIndex];
+    lbImg.src = item.full;
+    lbImg.alt = item.caption || "";
+    lbCaption.textContent = item.caption || "";
+  }
+  function closeLightbox(){
+    lightbox.classList.remove("open");
+    document.body.style.overflow = "";
+  }
+  document.querySelectorAll("[data-group]").forEach(group => {
+    group.querySelectorAll("button").forEach((btn, idx) => {
+      btn.addEventListener("click", () => openLightbox(group, idx));
+    });
+  });
+  document.getElementById("lbClose").addEventListener("click", closeLightbox);
+  document.getElementById("lbPrev").addEventListener("click", () => {
+    currentIndex = (currentIndex - 1 + currentGroup.length) % currentGroup.length;
+    renderLightbox();
+  });
+  document.getElementById("lbNext").addEventListener("click", () => {
+    currentIndex = (currentIndex + 1) % currentGroup.length;
+    renderLightbox();
+  });
+  lightbox.addEventListener("click", (e) => { if (e.target === lightbox) closeLightbox(); });
+  document.addEventListener("keydown", (e) => {
+    if (!lightbox.classList.contains("open")) return;
+    if (e.key === "Escape") closeLightbox();
+    if (e.key === "ArrowLeft") document.getElementById("lbPrev").click();
+    if (e.key === "ArrowRight") document.getElementById("lbNext").click();
+  });
+</script>
+
+</body>
+</html>
